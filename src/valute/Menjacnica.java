@@ -11,26 +11,33 @@ public class Menjacnica implements MenjacnicaInterfejs {
 	public void dodajKurs(LinkedList<Kurs> kursevi, GregorianCalendar datum, double prodajniKurs, double srednjiKurs,
 			double kupovniKurs) {
 		
-		Kurs kurs = new Kurs();
-		kurs.setKupovniKurs(kupovniKurs);
-		kurs.setProdajniKurs(prodajniKurs);
-		kurs.setSrednjiKurs(srednjiKurs);
-		kurs.setDatum(datum);
+		Kurs k = new Kurs();
+		k.setDatum(datum);
+		k.setProdajniKurs(prodajniKurs);
+		k.setSrednjiKurs(srednjiKurs);
+		k.setKupovniKurs(kupovniKurs);
 		
-		if(kurs != null)
-			kursevi.add(kurs);
+		kursevi.add(k);
 
+		
 	}
 
 	@Override
 	public void obrisiKurs(LinkedList<Kurs> kursevi, GregorianCalendar datum) {
-		// TODO Auto-generated method stub
+		
+		for (int i = 0; i < kursevi.size(); i++) {
+			if(kursevi.get(i).getDatum().equals(datum))
+				kursevi.remove(i);
+		}
 
 	}
 
 	@Override
 	public Kurs pronadjiKurs(LinkedList<Kurs> kursevi, GregorianCalendar datum) {
-		// TODO Auto-generated method stub
+		for (int i = 0; i < kursevi.size(); i++) {
+			if(kursevi.get(i).getDatum().equals(datum))
+				return kursevi.get(i);
+		}
 		return null;
 	}
 
