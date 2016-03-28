@@ -10,7 +10,15 @@ public class Menjacnica implements MenjacnicaInterfejs {
 	@Override
 	public void dodajKurs(LinkedList<Kurs> kursevi, GregorianCalendar datum, double prodajniKurs, double srednjiKurs,
 			double kupovniKurs) {
-		// TODO Auto-generated method stub
+		
+		Kurs kurs = new Kurs();
+		kurs.setKupovniKurs(kupovniKurs);
+		kurs.setProdajniKurs(prodajniKurs);
+		kurs.setSrednjiKurs(srednjiKurs);
+		kurs.setDatum(datum);
+		
+		if(kurs != null)
+			kursevi.add(kurs);
 
 	}
 
