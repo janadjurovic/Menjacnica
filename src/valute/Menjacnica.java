@@ -18,29 +18,27 @@ public class Menjacnica implements MenjacnicaInterfejs {
 		k.setKupovniKurs(kupovniKurs);
 		
 		kursevi.add(k);
+		
 
+		
 	}
 
 	@Override
 	public void obrisiKurs(LinkedList<Kurs> kursevi, GregorianCalendar datum) {
 		
-		for(int i = 0; i < kursevi.size(); i++){
-			if(kursevi.get(i).getDatum().equals(datum)){
+		for (int i = 0; i < kursevi.size(); i++) {
+			if(kursevi.get(i).getDatum().equals(datum))
 				kursevi.remove(i);
-			}
 		}
 
 	}
 
 	@Override
 	public Kurs pronadjiKurs(LinkedList<Kurs> kursevi, GregorianCalendar datum) {
-		
-		for(int i = 0; i < kursevi.size(); i++){
-			if(kursevi.get(i).getDatum().equals(datum)){
+		for (int i = 0; i < kursevi.size(); i++) {
+			if(kursevi.get(i).getDatum().equals(datum))
 				return kursevi.get(i);
-			}
 		}
-		
 		return null;
 	}
 
